@@ -36,3 +36,40 @@ body {
     max-width: 1140px;
   }
 }
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Helper classes */
+.ml-15 {
+  margin-left: 15px!important;
+}
+.mr-15 {
+  margin-right: 15px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.mt-15 {
+  margin-top: 15px;
+}
+
+// Overwrites for Material UI
+// start: Select styles
+.mat-mdc-text-field-wrapper {
+  background-color: transparent!important;
+}
+.mat-mdc-form-field-subscript-wrapper, .mat-mdc-form-field-bottom-align::before {
+  display: none;
+}
+.mdc-line-ripple {
+  display: none;
+}
+.mat-mdc-form-field.mat-focused .mat-mdc-form-field-focus-overlay,
+.mat-mdc-form-field.mat-hover {
+  background-color: transparent!important;
+}
+// end: Select styles

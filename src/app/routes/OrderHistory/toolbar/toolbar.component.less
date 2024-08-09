@@ -7,3 +7,51 @@
   border-radius: 4px;
   box-shadow: 0px 2px 5px #ccc;
 }
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: auto;
+  padding: 10px 10px 0px 10px;
+}
+
+.date-from, .date-to  {
+  width: 170px;
+}
+.vertical-separator {
+  height: 100%;
+  width: 1px;
+  background: #ebebeb;
+  padding: 10px 0 0px 0;
+  margin-bottom: 5px;
+  &::before {
+    border-left: 1px solid transparent;
+    content: ' ';
+  }
+}
+
+.product-select {
+  max-width: 250px;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  label, .label {
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 500!important;
+    color: #132c49;
+  }
+}
+
+.search {
+  display: flex;
+  height: 100%;
+  align-self: baseline;
+  margin-top: 6px;
+  input {
+    min-width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+}

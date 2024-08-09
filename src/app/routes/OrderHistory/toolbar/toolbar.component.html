@@ -1,16 +1,75 @@
 <mat-toolbar>
-  <div>
-    <label>Status</label>
+  <div class="status">
+    <label class="label">Status</label>
+    <div>
+      <mat-checkbox class="example-margin" (change)="statusFilter('pending')"
+        >Pending</mat-checkbox
+      >
+      <mat-checkbox class="example-margin" (change)="statusFilter('inProgress')"
+        >In Progress</mat-checkbox
+      >
+      <mat-checkbox class="example-margin" (change)="statusFilter('completed')"
+        >Completed</mat-checkbox
+      >
+    </div>
   </div>
-  <div>
-    <label>Product Line</label>
+  <div class="vertical-separator ml-15"></div>
+  <div class="product-line-filter">
+    <mat-form-field [floatLabel]="'always'" class="product-select">
+      <mat-label>Product lines</mat-label>
+      <mat-select
+        disableRipple
+        (selectionChange)="productLineFilter()"
+        [(value)]="selectedProductLine"
+        placeholder="All Product lines"
+      >
+        <mat-option>All Product lines</mat-option>
+        <mat-option value="readyMix">Ready-Mix</mat-option>
+        <mat-option value="cement">Cement</mat-option>
+        <mat-option value="aggregates">Aggregates</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+  <div class="vertical-separator"></div>
   <div>
-    <label>Date</label>
+    <mat-form-field [floatLabel]="'always'" class="date-from">
+      <mat-label>From</mat-label>
+      <input
+        matInput
+        [matDatepicker]="pickerFrom"
+        (dateChange)="dateChangeEvent('start', $event)"
+        [formControl]="startDate"
+      />
+
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerFrom">
+        <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #pickerFrom></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field [floatLabel]="'always'" class="date-to">
+      <mat-label>To</mat-label>
+      <input
+        matInput
+        [matDatepicker]="pickerTo"
+        (dateChange)="dateChangeEvent('end', $event)"
+        [formControl]="endDate"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="pickerTo">
+        <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #pickerTo></mat-datepicker>
+    </mat-form-field>
   </div>
-  
+
   <span class="spacer"></span>
-  <div>
-    <input placeholder="search" type="text" (input)="filterByOrderNumber($event)" >
+
+  <div class="search">
+    <input
+      placeholder="Search for Order Number"
+      type="text"
+      (input)="filterByOrderNumber($event)"
+    />
   </div>
 </mat-toolbar>
