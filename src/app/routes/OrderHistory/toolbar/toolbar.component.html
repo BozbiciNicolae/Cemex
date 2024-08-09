@@ -2,13 +2,20 @@
   <div class="status">
     <label class="label">Status</label>
     <div>
-      <mat-checkbox class="example-margin" (change)="statusFilter('pending')"
+      <mat-checkbox
+        class="example-margin"
+        (change)="statusFilterChange('pending')"
         >Pending</mat-checkbox
       >
-      <mat-checkbox class="example-margin" (change)="statusFilter('inProgress')"
+      <mat-checkbox
+        class="example-margin"
+        filterByOrderNumber
+        (change)="statusFilterChange('in progress')"
         >In Progress</mat-checkbox
       >
-      <mat-checkbox class="example-margin" (change)="statusFilter('completed')"
+      <mat-checkbox
+        class="example-margin"
+        (change)="statusFilterChange('completed')"
         >Completed</mat-checkbox
       >
     </div>
@@ -19,12 +26,11 @@
       <mat-label>Product lines</mat-label>
       <mat-select
         disableRipple
-        (selectionChange)="productLineFilter()"
-        [(value)]="selectedProductLine"
+        (selectionChange)="productLineFilterChange($event.value)"
         placeholder="All Product lines"
       >
         <mat-option>All Product lines</mat-option>
-        <mat-option value="readyMix">Ready-Mix</mat-option>
+        <mat-option value="ready-mix">Ready-Mix</mat-option>
         <mat-option value="cement">Cement</mat-option>
         <mat-option value="aggregates">Aggregates</mat-option>
       </mat-select>
@@ -69,7 +75,7 @@
     <input
       placeholder="Search for Order Number"
       type="text"
-      (input)="filterByOrderNumber($event)"
+      (input)="searchTextChange($event)"
     />
   </div>
 </mat-toolbar>

@@ -1,9 +1,10 @@
 <main class="container">
   <h1>Order History</h1>
   <section>
-    <toolbar
-      (orderNumberFilterEvent)="filterByOrderNumber($event)"
-    ></toolbar>
+    <toolbar (updateFiltersEvent)="runFilters($event)"></toolbar>
   </section>
-  <orders [items]="filteredOrderList"></orders>
+  <section *ngIf="filteredOrderList.length">
+    <orders [items]="filteredOrderList"></orders>
+  </section>
+  <div *ngIf="!filteredOrderList.length">Empty state</div>
 </main>
