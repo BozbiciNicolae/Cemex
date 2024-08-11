@@ -11,6 +11,47 @@
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: auto;
   padding: 10px 10px 0px 10px;
+  @media (max-width: 1199px) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    .vertical-separator, .spacer {
+      display: none;
+    }
+    .status, .product-line-filter, .date-filter, .search {
+      flex-basis: 50%;
+    }
+    .search {
+      padding-left: 15px;
+      box-sizing: border-box;
+    }
+    .status {
+      border-right: 1px solid #ebebeb;
+      box-sizing: border-box;
+      .label {
+        color: #001c3b;
+        margin-left: 10px;
+      }
+    }
+    .date-filter {
+      border-right: 1px solid #ebebeb;
+      box-sizing: border-box;
+      margin-top: -1px;
+    }
+  }
+  @media (max-width: 767px) {
+    .status, .product-line-filter, .date-filter, .search {
+      flex-basis: 100%;
+    }
+    .status, .product-line-filter, .date-filter {
+      border-bottom: 1px solid #ebebeb;
+      border-right: 0
+    }
+    .search {
+      padding-left: 10px;
+    }
+  }
+
 }
 
 .date-from, .date-to  {

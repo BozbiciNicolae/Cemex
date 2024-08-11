@@ -3,7 +3,7 @@
   <section>
     <toolbar (updateFiltersEvent)="runFilters($event)"></toolbar>
   </section>
-  <section *ngIf="filteredOrderList.length">
+  <section class="orders-table-wrap" *ngIf="filteredOrderList.length">
     <orders [items]="filteredOrderList"></orders>
   </section>
   <div *ngIf="!filteredOrderList.length">
