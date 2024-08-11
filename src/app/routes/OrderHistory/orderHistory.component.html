@@ -6,5 +6,7 @@
   <section *ngIf="filteredOrderList.length">
     <orders [items]="filteredOrderList"></orders>
   </section>
-  <div *ngIf="!filteredOrderList.length">Empty state</div>
+  <div *ngIf="!filteredOrderList.length">
+    <empty-state></empty-state>
+  </div>
 </main>

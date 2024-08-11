@@ -4,13 +4,19 @@ import { OrdersComponent } from "./orders/orders.component";
 import Order from "../../types/order";
 import { OrdersService } from "../../services/orders.service";
 import { CommonModule } from "@angular/common";
+import { EmptyStateComponent } from "../../components/EmptyState/emptyState.component";
 
 @Component({
   selector: "order-history",
   templateUrl: "orderHistory.component.html",
   styleUrl: "orderHistory.component.less",
   standalone: true,
-  imports: [ToolbarComponent, OrdersComponent, CommonModule],
+  imports: [
+    EmptyStateComponent,
+    ToolbarComponent,
+    OrdersComponent,
+    CommonModule,
+  ],
 })
 export default class OrderHistoryComponent {
   ordersService: OrdersService = inject(OrdersService);
@@ -31,7 +37,6 @@ export default class OrderHistoryComponent {
   }
 
   runFilters(filters: any) {
-    console.log("filters: ", filters.status);
     this.filteredOrderList = this.orderList
       .filter((item: Order) =>
         item.orderNumber.toString().includes(filters.search),
