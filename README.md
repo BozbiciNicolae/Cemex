@@ -9,3 +9,7 @@ A regular `npm install` will handle all dependencies, `node 18` is the minimum v
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` to see the Angular app. 
 Run `npx json-server db.json` to start the server that returns the order data.
 
+## Screenshots
+
+
+![mobile](https://puu.sh/KcIQw/fdb5804fba.png "mobile version")
