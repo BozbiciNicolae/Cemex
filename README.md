@@ -10,6 +10,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/` to see the
 Run `npx json-server db.json` to start the server that returns the order data.
 
 ## Screenshots
+##### Mobile:
+<img src="https://puu.sh/KcIQw/fdb5804fba.png" width="300"  />
 
+##### Tablet:
+<img src="https://puu.sh/KcIQq/ec9e7dfbc8.png" width="600"  />
 
-![mobile](https://puu.sh/KcIQw/fdb5804fba.png "mobile version")
+##### Desktop:
+<img src="https://puu.sh/KcIQi/a13a85e754.png" width="800"  />
